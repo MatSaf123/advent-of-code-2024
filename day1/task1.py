@@ -13,21 +13,23 @@ with open("input.txt", "r") as f:
         list_a.append(int(group[0]))
         list_b.append(int(group[1]))
 
-# Sort the lists
+# Sort the lists in ascending order
 list_a.sort()
 list_b.sort()
 
-# Go over the list and compute distances.
-# We could save them into a list but lets count the sum already
-sum = 0
+# Go over the lists and compute distances between elements on the same indices.
+# Compute the distances sum
+assert len(list_a) == len(
+    list_b), "Lists are not of the same length, this is not allowed"
+sum_of_distances = 0
 for pair in zip(list_a, list_b):
     a = pair[0]
     b = pair[1]
 
     if a > b:
-        sum += a - b
+        sum_of_distances += a - b
     else:
-        sum += b - a
+        sum_of_distances += b - a
 
-# Print the sum
-print(sum)
+# Print the result
+print(sum_of_distances)

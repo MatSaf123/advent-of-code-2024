@@ -23,4 +23,5 @@ for num in list_a:
     num_occurrences = counter.get(num, 0)
     similarity_score += num*num_occurrences
 
+# Print the result
 print(similarity_score)
